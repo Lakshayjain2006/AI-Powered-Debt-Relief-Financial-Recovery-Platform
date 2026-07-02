@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  
+  --color-dark-bg: #0a0f1d;
+  --color-dark-card: #111726;
+  --color-dark-border: #1e293b;
+  --color-dark-accent: #1d4ed8; /* Corporate Royal Blue */
+  
+  --color-emerald-accent: #059669;
+  --color-violet-accent: #1d4ed8; /* Banking Blue Accent */
+  
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0f1d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* Formal Banking Panel Styling */
+.glass-panel {
+  background: #111726;
+  border: 1px solid #1e293b;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
+}
+
+.glass-card {
+  background: #182238;
+  border: 1px solid #283756;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.glow-indigo {
+  box-shadow: 0 0 1px 0 rgba(37, 99, 235, 0.4);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 1px 0 rgba(5, 150, 105, 0.4);
+}
+
+/* Hide native controls */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}

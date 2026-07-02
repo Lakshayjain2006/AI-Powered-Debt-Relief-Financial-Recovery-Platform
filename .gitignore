@@ -13,10 +13,10 @@ venv/
 env/
 ENV/
 
-# Database files (never commit SQLite DBs)
-*.db
-*.sqlite
-*.sqlite3
+# Database files - finrelief.db is intentionally included for internship demo
+# *.db
+# *.sqlite
+# *.sqlite3
 
 # Environment & secrets (NEVER commit these)
 .env

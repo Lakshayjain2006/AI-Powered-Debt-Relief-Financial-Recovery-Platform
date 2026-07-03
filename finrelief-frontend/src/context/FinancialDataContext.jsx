@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const FinancialDataContext = createContext(null);
 
-const API_URL = 'http://localhost:8000';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 const INITIAL_DEBTS = [
   { id: '1', creditor: 'HDFC Regalia Credit Card', balance: 180000, apr: 36.0, minPayment: 9000, category: 'Credit Card' },

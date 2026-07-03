@@ -1,0 +1,44 @@
+# render.yaml — Render Blueprint for FinRelief
+# Docs: https://render.com/docs/blueprint-spec
+#
+# HOW TO USE:
+#   1. Push this repo to GitHub
+#   2. Go to https://dashboard.render.com/ → New → Blueprint
+#   3. Connect your repo — Render will auto-detect this file
+#   4. Fill in the secret env vars (GEMINI_API_KEY, JWT_SECRET_KEY) in the dashboard
+
+services:
+  # ─── Backend: FastAPI ───────────────────────────────────────────────────────
+  - type: web
+    name: finrelief-backend
+    runtime: python
+    rootDir: finrelief-backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false          # You will paste this in the Render dashboard
+      - key: JWT_SECRET_KEY
+        generateValue: true  # Render auto-generates a secure random value
+      - key: ALLOWED_ORIGINS
+        # Set this AFTER frontend deploys. Format: https://finrelief-frontend.onrender.com
+        sync: false
+
+  # ─── Frontend: Vite/React Static Site ───────────────────────────────────────
+  - type: web
+    name: finrelief-frontend
+    runtime: static
+    rootDir: finrelief-frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    plan: free
+    routes:
+      # SPA fallback: all routes serve index.html
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        # Set this to your backend URL: https://finrelief-backend.onrender.com
+        sync: false

@@ -26,6 +26,7 @@ _default_origins = [
     "http://localhost:5174",
     "http://127.0.0.1:5173",
     "http://127.0.0.1:5174",
+    "https://finrelief-frontend.onrender.com",
 ]
 _extra_origins = os.environ.get("ALLOWED_ORIGINS", "")
 _extra_list = [o.strip() for o in _extra_origins.split(",") if o.strip()]

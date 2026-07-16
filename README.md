@@ -369,3 +369,5 @@ The result is a working, deployed, full-stack application — not just a prototy
 
 **Repository:** [Lakshayjain2006/AI-Powered-Debt-Relief-Financial-Recovery-Platform](https://github.com/Lakshayjain2006/AI-Powered-Debt-Relief-Financial-Recovery-Platform)
 **Team ID:** SWTID-2026-2950
+
+*Demo Link:** [Lakshayjain2006/AI-Powered-Debt-Relief-Financial-Recovery-Platform](https://drive.google.com/drive/folders/1vSkAk48TTAs0v3DEHNGTku0gl_BsT6Pf?usp=drive_link)
